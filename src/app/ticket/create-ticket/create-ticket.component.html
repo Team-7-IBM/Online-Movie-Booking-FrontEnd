@@ -1,0 +1,100 @@
+<section id="ticket">
+  <div class="custom-container">
+    <h3 style="color: red">{{ errorMessage }}</h3>
+    <form [formGroup]="ticketForm" (ngSubmit)="addATicket();sendemail()">
+      <div class="form-row">
+        <div class="form-group">
+          <div class="input-data">
+            <input
+              type="number"
+              class="form-control"
+              formControlName="noOfSeats"
+              required
+            />
+            <div class="underline"></div>
+            <label for="">No of Seats</label>
+          </div>
+        </div>
+      </div>
+      <div class="movie-container">
+        <div class="container">
+          <div class="screen"></div>
+          
+          <div class="row">
+              <div class="seat">&nbsp;A1</div>
+              <div class="seat">&nbsp;A2</div>
+              <div class="seat">&nbsp;A3</div>
+              <div class="seat">&nbsp;A4</div>
+              <div class="seat">&nbsp;A5</div>
+              <div class="seat">&nbsp;A6</div>
+              <div class="seat">&nbsp;A7</div>
+              <div class="seat">&nbsp;A8</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="seat">&nbsp;B1</div>
+              <div class="seat">&nbsp;B2</div>
+              <div class="seat">&nbsp;B3</div>
+              <div class="seat">&nbsp;B4</div>
+              <div class="seat">&nbsp;B5</div>
+              <div class="seat">&nbsp;B6</div>
+              <div class="seat">&nbsp;B7</div>
+              <div class="seat">&nbsp;B8</div>
+            </div>
+            <div class="row">
+              <div class="seat">&nbsp;C1</div>
+              <div class="seat">&nbsp;C2</div>
+              <div class="seat">&nbsp;C3</div>
+              <div class="seat">&nbsp;C4</div>
+              <div class="seat">&nbsp;C5</div>
+              <div class="seat">&nbsp;C6</div>
+              <div class="seat">&nbsp;C7</div>
+              <div class="seat">&nbsp;C8</div>
+            </div>
+            <div class="row">
+              <div class="seat">&nbsp;D1</div>
+              <div class="seat">&nbsp;D2</div>
+              <div class="seat">&nbsp;D3</div>
+              <div class="seat">&nbsp;D4</div>
+              <div class="seat">&nbsp;D5</div>
+              <div class="seat">&nbsp;D6</div>
+              <div class="seat">&nbsp;D7</div>
+              <div class="seat">&nbsp;D8</div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="seat">&nbsp;E1</div>
+              <div class="seat">&nbsp;E2</div>
+              <div class="seat">&nbsp;E3</div>
+              <div class="seat">&nbsp;E4</div>
+              <div class="seat">&nbsp;E5</div>
+              <div class="seat">&nbsp;E6</div>
+              <div class="seat">&nbsp;E7</div>
+              <div class="seat">&nbsp;E8</div>
+            </div>
+            <div class="row">
+              <div class="seat">&nbsp;F1</div>
+              <div class="seat">&nbsp;F2</div>
+              <div class="seat">&nbsp;F3</div>
+              <div class="seat">&nbsp;F4</div>
+              <div class="seat">&nbsp;F5</div>
+              <div class="seat">&nbsp;F6</div>
+              <div class="seat">&nbsp;F7</div>
+              <div class="seat">&nbsp;F8</div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="credits"><a href="http://www.aniket.co" target="_blank"></a></div>
+      <select class="form-select" multiple formControlName="seats">
+        <option value="">Choose Seats</option>
+        <option *ngFor="let s of seats" [ngValue]="s">
+          {{ s.seatNumber }} | {{ s.type }}
+        </option>
+      </select>
+      <div>
+        <button type="submit" class="btn btn-primary">Add Booking</button>
+      </div>
+    </form>
+  </div>
+</section>

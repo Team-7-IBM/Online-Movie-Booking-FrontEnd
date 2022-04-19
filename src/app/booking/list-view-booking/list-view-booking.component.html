@@ -1,0 +1,78 @@
+<div class="wrapper"style="background-image: url(https://wallpaperaccess.com/full/25911.jpg);top: -10px;overflow: hidden;background-size: cover;">
+  <main class="main">
+    <section class="section">
+      <ul class="adminList">
+        <li class="adminList__item">
+          <a
+            href="#"
+            style="pointer-events: none"
+            class="adminList-link focus--box-shadow"
+          >
+            <div class="adminList-wrapper">
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>Transaction Mode</strong></span
+                >
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>Transaction Status</strong>
+                </span>
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>Total Cost</strong></span
+                >
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>Booking Date</strong>
+                </span>
+              </div>
+              <div class="adminList-element adminList-setting">
+                <span></span>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <ul class="adminList">
+        <li class="adminList__item" *ngFor="let bk of bookings">
+          <a
+            [routerLink]="['/booking/view', bk.transactionId]"
+            class="adminList-link focus--box-shadow"
+          >
+            <div class="adminList-wrapper">
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name">{{
+                  bk.transactionMode
+                }}</span>
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name">{{
+                  bk.transactionStatus
+                }}</span>
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name">{{ bk.totalCost }}</span>
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name">{{ bk.bookingDate }}</span>
+              </div>
+              <div class="adminList-element adminList-setting">
+                <button
+                  class="focus--box-shadow"
+                  type="button"
+                  [routerLink]="['/booking/view', bk.transactionId]"
+                >
+                  <i class="icofont-caret-right"></i>
+                </button>
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>

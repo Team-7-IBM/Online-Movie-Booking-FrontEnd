@@ -1,0 +1,65 @@
+<section>
+  <div class="custom-container" style="background-image: url(https://wallup.net/wp-content/uploads/2015/12/489-Joker-red-black-eyes-abstract-Batman-minimalism-748x501.jpg);">
+    <h3 style="color: red">{{ errorMessage }}</h3>
+    <form [formGroup]="screenForm" (ngSubmit)="addAScreen()">
+      <div class="text-center text-lg-left">
+          <h1>Add Screen to Theatre</h1>
+        </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="input-data">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="screenName"
+              required
+            />
+            <div class="underline"></div>
+            <label for="">Screen Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="row">
+            <div class="col input-data">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="rows"
+                required
+              />
+              <div class="underline"></div>
+              <label for="">Rows</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="row">
+            <div class="col input-data">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="columns"
+                required
+              />
+              <div class="underline"></div>
+              <label for="">Columns</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="button">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!screenForm.valid"
+        >
+          Add Screen
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

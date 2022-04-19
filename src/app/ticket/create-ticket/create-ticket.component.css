@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+
+body {
+	font-family: "Montserrat", sans-serif;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+  background-color: #242333;
+  color: #fff;
+  margin: 0;
+}
+
+* {
+	font-family: "Montserrat", sans-serif !important;
+  box-sizing: border-box;
+}
+
+.movie-container {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column
+}
+
+.movie-container select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  padding: 5px 15px;
+  margin-bottom: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.container {
+  perspective: 1000px;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin-bottom: 5vh;
+  margin-right: 5vh;
+  /* margin: 3px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.selected {
+  background-color: #0081cb;
+}
+
+.occupied {
+  background-color: #fff;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  background: rgba(0,0,0,0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.screen {
+  background: #fff;
+  height: 70px;
+  width: 100%;
+  margin: 10px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255,255,255,0.7);
+}
+
+p.text {
+  margin: 40px 0;
+}
+
+p.text span {
+  color: #0081cb;
+  font-weight: 600;
+  box-sizing: content-box;
+}
+
+.credits a {
+  color: #fff;
+}
+#ticket {
+  color: #b6b7b9;
+  position: relative;
+}
+.custom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background: #13151f;
+  width: 100%;
+  padding: 25px 40px 10px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  background: #13151f;
+}
+.custom-container .text {
+  text-align: center;
+  font-size: 35px;
+  -webkit-text-fill-color: transparent;
+}
+.custom-container form {
+  padding: 30px 0 0 0;
+}
+.custom-container form .form-row {
+  display: flex;
+  margin-right: 32px 0;
+}
+form .form-row .input-data {
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+
+  position: relative;
+}
+form .form-row .textarea {
+  height: 70px;
+}
+
+.date {
+  padding-left: 1rem;
+}
+
+.input-data input,
+.textarea textarea,
+.date input {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+}
+.input-data input:focus ~ label,
+.textarea textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: white;
+}
+.textarea textarea {
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.textarea label {
+  width: 100%;
+  bottom: 40px;
+  background: #13151f;
+}
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+@media (max-width: 700px) {
+  .custom-container .text {
+    font-size: 30px;
+  }
+  .custom-container form {
+    padding: 10px 0 0 0;
+  }
+  .custom-container form .form-row {
+    display: block;
+  }
+  form .form-row .input-data {
+    margin: 35px 0 !important;
+  }
+}
+
+.form-select {
+  width: 20rem;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+}
+
+button {
+  margin-left: 1rem;
+}
